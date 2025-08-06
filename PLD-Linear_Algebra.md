@@ -1,11 +1,10 @@
 # 🧠 Fiche de Révision – Algèbre Linéaire et NumPy
 
 ## 📚 Sommaire
-1. [Concepts de base](#concepts-de-base)
-2. [Opérations sur les données](#opérations-sur-les-données)
-3. [NumPy et calculs avancés](#numpy-et-calculs-avancés)
-4. [Tableau récapitulatif](#tableau-récapitulatif)
-5. [Défis pratiques](#défis-pratiques)
+1. [Concepts de base](#-concepts-de-base)
+2. [Opérations sur les données](#-opérations-sur-les-données)
+3. [NumPy et calculs avancés](#-numpy-et-calculs-avancés)
+4. [Tableau récapitulatif](#-tableau-récapitulatif)
 
 ---
 
@@ -23,6 +22,19 @@ v = [2, 4, 6]
 - Représente une **direction + une grandeur** (ex : vitesse, force)
 - Visualisation : comme une **flèche** dans l'espace
 - Usage pratique : liste de valeurs (notes d'un élève, coordonnées GPS)
+
+**Magnitude d'un vecteur :**
+**Définition :** La magnitude (ou norme) d'un vecteur, c'est sa longueur dans l'espace.
+
+**Exemple :**
+```python
+v = [3, 4] → magnitude = √(3² + 4²) = 5
+```
+
+**🎯 À retenir :**
+- Visualisation : comme la taille d'une flèche
+- Utilisé pour normaliser les vecteurs : `v / ||v||`
+- En IA : très utile pour les distances, similarités
 
 ---
 
@@ -219,18 +231,20 @@ a + b = [[11, 12, 13],
 
 ---
 
-### ✅ 14. Magnitude d'un vecteur
-**Définition :** La magnitude (ou norme) d'un vecteur, c'est sa longueur dans l'espace.
+## ⚠️ Erreurs fréquentes à éviter
 
-**Exemple :**
-```python
-v = [3, 4] → magnitude = √(3² + 4²) = 5
-```
+- Oublier de vérifier les shapes avant une opération (`ValueError`)
+- Confondre `*` (élément par élément) et `@` (multiplication matricielle)
+- Penser que `np.array` = `list` (comportement différent sur les slices !)
+- Mal utiliser le `axis` (parfois inversé par rapport à l'intuition)
 
-**🎯 À retenir :**
-- Visualisation : comme la taille d'une flèche
-- Utilisé pour normaliser les vecteurs : `v / ||v||`
-- En IA : très utile pour les distances, similarités
+---
+
+## ➕ Bonus : Norme L1 vs L2
+
+- Norme **L2** (euclidienne) : `||v|| = sqrt(x² + y² + ...)`
+- Norme **L1** (taxicab) : `||v|| = |x| + |y| + ...`
+- En ML : L1 favorise les poids nuls (sparse), L2 favorise la régularité
 
 ---
 
@@ -247,22 +261,6 @@ v = [3, 4] → magnitude = √(3² + 4²) = 5
 | Dot product | Multiplication + addition |
 | Broadcasting | Étirement intelligent des tailles |
 | NumPy | Boîte à outils des tableaux |
-| Magnitude | Longueur d'un vecteur |
-
----
-
-## 🔷 Défis pratiques
-
-### 🤔 Questions de compréhension
-1. **Que se passe-t-il si les formes de matrices ne correspondent pas ?**
-2. **Pourquoi A @ B ≠ B @ A ?**
-3. **Peux-tu dessiner une matrice 2×3 et sa transposée ?**
-4. **Peux-tu écrire un perceptron en NumPy uniquement ?**
-
-### 💡 Exercices pratiques
-- Créer des exemples concrets pour chaque concept
-- Implémenter les opérations de base sans NumPy, puis avec NumPy
-- Analyser les performances entre boucles Python et opérations vectorisées
 
 ---
 
